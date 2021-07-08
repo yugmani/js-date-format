@@ -54,8 +54,8 @@ let currentMonth = months[new Date().getMonth()];
 // Current Month: July
 
 // getDate() – gets the day as a number (1-31)
-let date = new Date().getDate();
-// console.log(date); // 8 => current date July 8th
+let day = new Date().getDate();
+// console.log(day); // 8 => current date July 8th
 
 // getHours() – gets the hour (0-23)
 let hours = new Date().getHours();
@@ -66,3 +66,56 @@ let minutes = new Date().getMinutes();
 
 let seconds = new Date().getSeconds();
 // console.log(seconds); //28
+
+// *********** toDateString() Method ********
+// **********************************
+
+// The JavaScript toDateString() method returns the date portion of a date object in the form of a string using the following format:
+
+// 1. First three letters of the week day name
+// 2. First three letters of the month name
+// 3. Two digit day of the month, padded on the left a zero if necessary
+// 4. Four digit year (at least), padded on the left with zeros if necessary
+
+let date1 = new Date().toDateString();
+// console.log(date1); // Thu Jul 08 2021
+
+// One major downside to this method is our inability to manipulate the date output the way we want it.
+// For example, it doesn’t give us the ability to show dates according to our language.
+
+// ********* toLocaleDateString() Method *********
+// **********************************************
+
+// This method returns the date object as a string using local conventions.
+// It also takes in options as arguments which lets you/your applications customize the behavior of the function.
+
+// Syntax:
+// toLocaleDateString()
+// toLocaleDateString(locales)
+// toLocaleDateString(locales, options)
+
+const currentDate = new Date();
+
+const options = {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric'
+};
+
+// Without locales or options
+console.log(currentDate.toLocaleDateString()); // 7/8/2021
+
+// Without options
+// Japanese
+console.log(currentDate.toLocaleDateString('ja-JP')); // 2021/7/8
+
+console.log(currentDate.toLocaleDateString('ja-JP', options)); // 2021年7月8日木曜日
+
+console.log(currentDate.toLocaleDateString('de-DE', options)); // Donnerstag, 8. Juli 2021
+
+// Arabic
+console.log(currentDate.toLocaleDateString('ar-EG', options)); // الخميس، ٨ يوليو ٢٠٢١
+
+// US English
+console.log(currentDate.toLocaleDateString('en-US', options)); //Thursday, Jul 8, 2021
