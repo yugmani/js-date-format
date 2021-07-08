@@ -104,18 +104,18 @@ const options = {
 };
 
 // Without locales or options
-console.log(currentDate.toLocaleDateString()); // 7/8/2021
+// console.log(currentDate.toLocaleDateString()); // 7/8/2021
 
 // Without options
 // Japanese
-console.log(currentDate.toLocaleDateString('ja-JP')); // 2021/7/8
+// console.log(currentDate.toLocaleDateString('ja-JP')); // 2021/7/8
 
-console.log(currentDate.toLocaleDateString('ja-JP', options)); // 2021年7月8日木曜日
+// console.log(currentDate.toLocaleDateString('ja-JP', options)); // 2021年7月8日木曜日
 
-console.log(currentDate.toLocaleDateString('de-DE', options)); // Donnerstag, 8. Juli 2021
+// console.log(currentDate.toLocaleDateString('de-DE', options)); // Donnerstag, 8. Juli 2021
 
 // Arabic
-console.log(currentDate.toLocaleDateString('ar-EG', options)); // الخميس، ٨ يوليو ٢٠٢١
+// console.log(currentDate.toLocaleDateString('ar-EG', options)); // الخميس، ٨ يوليو ٢٠٢١
 
 // US English
-console.log(currentDate.toLocaleDateString('en-US', options)); //Thursday, Jul 8, 2021
+// console.log(currentDate.toLocaleDateString('en-US', options)); //Thursday, Jul 8, 2021
