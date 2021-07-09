@@ -105,24 +105,90 @@ let d4 = new Date('1988-06-11T00:00');
 // The native Date object comes with seven formatting methods.
 const dateFormat = new Date(2019, 0, 23, 17, 23, 42);
 
-console.log(dateFormat.toString());
+// console.log(dateFormat.toString());
 // Wed Jan 23 2019 17:23:42 GMT-0800 (Pacific Standard Time)
-console.log(dateFormat.toDateString());
+
+// console.log(dateFormat.toDateString());
 // Wed Jan 23 2019
 
-console.log(dateFormat.toLocaleString());
+// console.log(dateFormat.toLocaleString());
 // 1/23/2019, 5:23:42 PM
-console.log(dateFormat.toLocaleDateString()); // 1/23/2019
 
-console.log(dateFormat.toGMTString());
+// console.log(dateFormat.toLocaleDateString()); // 1/23/2019
+
+// console.log(dateFormat.toGMTString());
 // Thu, 24 Jan 2019 01:23:42 GMT
 
-console.log(dateFormat.toUTCString());
+// console.log(dateFormat.toUTCString());
 // Thu, 24 Jan 2019 01:23:42 GMT
 
-console.log(dateFormat.toISOString());
+// console.log(dateFormat.toISOString());
 // 2019-01-24T01:23:42.000Z
 
 // If you need a custom format, you need to create it yourself.
 
+//  *************************************
+// WRITING A CUSTOM DATE FORMATTING
+// **************************************
 
+// Four methods to get dates:
+// i. getFullYear: Gets 4-digit year according to local time
+// ii. getMonth: Gets month of the year (0-11) according to local time. Month is zero-indexed.
+// iii. getDate: Gets day of the month (1-31) according to local time.
+// iv. getDay: Gets day of the week (0-6) according to local time. Day of the week begins with Sunday (0) and ends with Saturday (6).
+
+const myDate = new Date(2019, 0, 23);
+
+const myYear = myDate.getFullYear(); // 2019
+const myMonth = myDate.getMonth(); // 0
+const myDates = myDate.getDate(); // 23
+const myDay = myDate.getDay(); // 3
+
+// It’s harder to get names of day and month.
+
+// Since Month is zero-indexed, we can use an array instead of an object.
+
+const allMonths = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December'
+];
+
+// To get January, you need to:
+
+// a. Use getMonth to get the zero-indexed month from the date.
+// b. Get the month name from months array.
+
+const monthIndex = myDate.getMonth(); // 0
+const monthName = allMonths[monthIndex];
+// console.log(monthName); // January
+
+// More condensed form:
+const month_name = allMonths[myDate.getMonth()]; // January
+
+// Similary to get day name
+const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+const dayName = days[myDate.getDay()];
+// console.log(dayName); // Wed
+
+// Then, you combine all the variables you created to get the formatted string.
+
+const formattedDate = `${dayName}, ${myDates},${monthName} ${myYear}`;
+console.log(formattedDate); // Wed, 23,January 2019
+
+// ******* Custom Formatted Time *******
+
+// 1. getHours: Gets hours (0-23) according to local time.
+// 2. getMinutes: Gets minutes (0-59) according to local time.
+// 3. getSeconds: Gets seconds (0-59) according to local time.
+// 4. getMilliseconds: Gets milliseconds (0-999) according to local time.
