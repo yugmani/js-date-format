@@ -62,12 +62,24 @@ let d4 = new Date('1988-06-11T00:00');
 // 5. Minutes: Minutes (0-59). Defaults to 0 if omitted.
 // 7. Seconds: Seconds (0-59). Defaults to 0 if omitted.
 // 8. Milliseconds: Milliseconds (0-999). Defaults to 0 if omitted.
-console.log(new Date(2019, 5, 11, 5, 23, 59));
+
+// console.log(new Date(1988, 2, 21));
+// Mon Mar 21 1988 00:00:00 GMT-0800 (Pacific Standard Time)
+
+// console.log(new Date(2019, 11, 25, 8));
+// Wed Dec 25 2019 08:00:00 GMT-0800 (Pacific Standard Time)
+
+// console.log(new Date(2023, 10, 6, 2, 20));
+// Mon Nov 06 2023 02:20:00 GMT-0800 (Pacific Standard Time)
+
+// console.log(new Date(2019, 5, 11, 5, 23, 59));
 // Tue Jun 11 2019 05:23:59 GMT-0700 (Pacific Daylight Time)
+
 // Notice dates created with arguments are all in Local Time?
 
 // If you ever need UTC, you create a date in UTC this way:
-console.log(new Date(Date.UTC(2019, 5, 11)));
+
+// console.log(new Date(Date.UTC(2019, 5, 11)));
 // Mon Jun 10 2019 17:00:00 GMT-0700 (Pacific Daylight Time)
 
 // c. with a timestamp
