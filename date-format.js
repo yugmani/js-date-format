@@ -83,4 +83,18 @@ let d4 = new Date('1988-06-11T00:00');
 // Mon Jun 10 2019 17:00:00 GMT-0700 (Pacific Daylight Time)
 
 // c. with a timestamp
+// ************************************
+
+// In JavaScript, a timestamp is the amount of milliseconds elapsed since 1 January 1970 (1 January 1970 is also known as Unix epoch time).
+// You only use timestamps to compare between different dates
+
+// console.log(new Date(1560211200000));
+// Mon Jun 10 2019 17:00:00 GMT-0700 (Pacific Daylight Time)
+
 // d. with no arguments
+// ***********************************
+
+// If you create a date without any arguments, you get a date set to the current time (in Local Time).
+
+// console.log(new Date());
+// Current Date and time: Thu Jul 08 2021 18:24:23 GMT-0700 (Pacific Daylight Time)
