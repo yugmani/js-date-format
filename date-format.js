@@ -98,3 +98,31 @@ let d4 = new Date('1988-06-11T00:00');
 
 // console.log(new Date());
 // Current Date and time: Thu Jul 08 2021 18:24:23 GMT-0700 (Pacific Daylight Time)
+
+// ******* FORMATTING A DATE ********
+
+// no easy way to format a date in JavaScript.
+// The native Date object comes with seven formatting methods.
+const dateFormat = new Date(2019, 0, 23, 17, 23, 42);
+
+console.log(dateFormat.toString());
+// Wed Jan 23 2019 17:23:42 GMT-0800 (Pacific Standard Time)
+console.log(dateFormat.toDateString());
+// Wed Jan 23 2019
+
+console.log(dateFormat.toLocaleString());
+// 1/23/2019, 5:23:42 PM
+console.log(dateFormat.toLocaleDateString()); // 1/23/2019
+
+console.log(dateFormat.toGMTString());
+// Thu, 24 Jan 2019 01:23:42 GMT
+
+console.log(dateFormat.toUTCString());
+// Thu, 24 Jan 2019 01:23:42 GMT
+
+console.log(dateFormat.toISOString());
+// 2019-01-24T01:23:42.000Z
+
+// If you need a custom format, you need to create it yourself.
+
+
