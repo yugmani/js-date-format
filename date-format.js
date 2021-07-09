@@ -184,7 +184,7 @@ const dayName = days[myDate.getDay()];
 // Then, you combine all the variables you created to get the formatted string.
 
 const formattedDate = `${dayName}, ${myDates},${monthName} ${myYear}`;
-console.log(formattedDate); // Wed, 23,January 2019
+// console.log(formattedDate); // Wed, 23,January 2019
 
 // ******* Custom Formatted Time *******
 
@@ -192,3 +192,53 @@ console.log(formattedDate); // Wed, 23,January 2019
 // 2. getMinutes: Gets minutes (0-59) according to local time.
 // 3. getSeconds: Gets seconds (0-59) according to local time.
 // 4. getMilliseconds: Gets milliseconds (0-999) according to local time.
+
+// ************************************
+// COMPARING DATES
+// ************************************
+
+const dateOne = new Date(2020, 10, 26);
+const dateTwo = new Date(2010, 10, 26);
+const dateThree = new Date(2010, 10, 26);
+
+// to know whether a date comes before or after another date,
+// console.log(dateOne > dateTwo); // true
+
+// It’s more difficult if you want to check if two dates fall exactly at the same time. You can’t compared them with == or ===.
+
+// console.log(dateTwo == dateThree); // false
+// console.log(dateTwo === dateThree); // false
+
+function compareYears(a, b) {
+  if (a.getFullYear() === b.getFullYear()) {
+    return true;
+  }
+  return false;
+}
+
+function compareMonths(a, b) {
+  if (a.getMonth() === b.getMonth()) {
+    return true;
+  }
+  return false;
+}
+
+function compareDates(a, b) {
+  if (a.getDate() === b.getDate()) {
+    return true;
+  }
+  return false;
+}
+
+const isExactlySame = (a, b) => {
+  return (
+    a.getFullYear() === b.getFullYear() &&
+    a.getMonth() === b.getMonth() &&
+    a.getDate() === b.getDate() &&
+    a.getTime() === b.getTime()
+  );
+};
+
+// console.log(compareYears(dateTwo, dateThree)); // true
+
+// console.log(isExactlySame(dateTwo, dateThree)); // true
