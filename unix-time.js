@@ -5,8 +5,7 @@
 // ********* Date.parse() **********
 // **************************************
 
-
-// The Date.parse() method can help while dealing with calculations including dates. 
+// The Date.parse() method can help while dealing with calculations including dates.
 // These calculations are far easier, more accurate, and written more logically when the underlying date is represented as a Number rather than a string.
 
 // The Date.parse() method takes as an argument a string representing a date, and returns the number of milliseconds that have elapsed between January 1, 1970, 00:00:00 UTC and the date provided.
@@ -26,17 +25,35 @@
 // ss.sss – The current seconds and milliseconds (e.g. 03.444, 24.536)
 // Z – the literal character Z, which is used to mark the end of the timestamp
 
-// At a minimum, the year is mandatory. If a value is not provided in the input string, it will be given its minimum value (i.e. the month will be January if no month is provided, the time will be midnight if no timestamp is provided). 
+// At a minimum, the year is mandatory. If a value is not provided in the input string, it will be given its minimum value (i.e. the month will be January if no month is provided, the time will be midnight if no timestamp is provided).
 // If the value specified is invalid for any of the portions of the timestamp string (e.g. month is set to ‘00’), NaN is returned.
 
 // Years can be passed in as four decimal digits (i.e. 2020) or 6 decimal digits with a + or – operator attached.
 
 const unixZeroTime = Date.parse('1970');
-console.log(unixZeroTime);  // Expected output: 0
+// console.log(unixZeroTime);  // Expected output: 0
 
 const someDate = Date.parse('+002021-07-01T23:00:00.000');
-console.log(someDate);  // 1625205600000 =>this value represents the number of milliseconds between that date and January 1st, 1970 00:00 AM UTC.
+// console.log(someDate);  // 1625205600000 =>this value represents the number of milliseconds between that date and January 1st, 1970 00:00 AM UTC.
 
-
-// According to MDN, it is not recommended to use Date.parse. Their reasoning provided is: ”… until ES5, parsing of strings was entirely implementation dependent. 
+// According to MDN, it is not recommended to use Date.parse. Their reasoning provided is: ”… until ES5, parsing of strings was entirely implementation dependent.
 // There are still many differences in how different hosts parse date strings, therefore date strings should be manually parsed
+
+
+// *******************************************
+// Convert a date String into a UNIX timestamp
+// *******************************************
+
+// two methods that can be used to obtain a numeric representation of a given date. 
+
+// First Method: Date.now()
+const newDate = new Date();
+const time1 = Date.now(newDate);
+// console.log(time1);   // 1625898865530
+
+// Second Method: getTime()
+const time2 = newDate.getTime();
+// console.log(time2); // 1625898865530
+
+// Both Date.now() and getTime() convert the date string into a UNIX timestamp.
+
